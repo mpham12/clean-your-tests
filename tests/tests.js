@@ -63,3 +63,49 @@ describe('calculateProductPrice', () => {
     expect(() => pricing.calculateProductPrice(unknownProduct, {}, {})).to.throw('Unknown product type: vision')
   })
 })
+
+describe('calculateVolLifePricePerRole',()=>{})
+describe('calculateVolLifePrice',()=>{})
+
+
+
+
+
+describe('calculateLTDPrice',()=>{})
+
+describe('calculateMedicalPrice',()=>{
+  it()
+})
+
+
+describe('getMedicalPricePerRole',()=>{
+  it('return the cost of medical per role',()=>{
+    let chooseRoleAndPrice = [{ role: 'ee', price: 19.26, }]
+    let costs = [{ role: 'ee', price: 19.26, }]
+    let costPerRole = pricing.getMedicalPricePerRole('ee',costs)
+
+    expect(costPerRole).to.eq(19.26) 
+  })
+})
+
+
+
+describe('getEmployerContribution',()=>{
+  
+    it('return the price for contribute for an employee with contributed ',()=>{
+      let contribution = {
+        mode:'dollars',
+        contribution:75.12
+      }
+      let result = pricing.getEmployerContribution(contribution)
+      expect(result).to.eq(75.12)
+    })
+})
+
+
+describe('formatPrice',()=>{
+  it ('return a format number with two decimal ',()=>{
+  let aPrice = pricing.formatPrice(5.234151)
+    expect(aPrice).to.eq(5.23)
+  })
+})
